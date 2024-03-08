@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kartu Ucapan</title>
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+	<link href="css/magnific-popup.min.css" rel="stylesheet">
+    <link href="css/tooplate-style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<!--
+
+Tooplate 2122 Nano Folio
+
+https://www.tooplate.com/view/2122-nano-folio
+
+-->
+</head>
+<body>
+	<div class="tm-container-fluid">
+		<section class="tm-about tm-mb-80 tm-p-50 tm-bgcolor-1 tm-border-rounded">
+			<div class="tm-about-header tm-flex-center">
+				<h2>Terimakasih.</h2>
+			</div>
+			<div class="tm-about-text">
+				<p class="tm-mb-40">Jika kamu sudah berada pada halaman ini, artinya kamu sudah membaca tulisan-tulisan sebelumnya. Terimakasih sudah mau membaca semua tulisan yang tadi dan bertahan sampai ke halaman ini.</p>
+				<p class="tm-mb-0">Untuk nomor Whatsapp saya, maaf maksud saya ada di halaman selanjutnya lagi :) . Klik tulisan disamping untuk beralih ke halaman terakhir : <a rel="nofollow" href="terakhirr.html">halaman terakhir</a>.
+			</div>
+		</section>
+
+		<footer class="tm-footer">
+			&copy; 2024 - Rama
+		</footer>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script>
+		$(function(){
+		  	// Init the image gallery
+		  	var $gallery = $(".tm-gallery").isotope({
+		    	itemSelector: ".tm-gallery-item",
+		    	layoutMode: "fitRows"
+		  	});
+		  
+		  	// Layout Isotope after each image loads
+		  	$gallery.imagesLoaded().progress(function() {
+		    	$gallery.isotope("layout");
+		  	});
+
+		  	$(".filters-button-group").on("click", "a", function(e) {
+		  		e.preventDefault();
+			    var filterValue = $(this).attr("data-filter");
+			    $gallery.isotope({ filter: filterValue });
+			    $('.filters-button-group a').removeClass('active');
+			    $(this).addClass('active');
+			});
+
+		  	// Magnific Pop up
+		  	$('.tm-gallery').magnificPopup({
+		  		delegate: 'a',
+			  	type: 'image',
+				  gallery: { enabled: true }
+			});
+		});
+	</script>
+</body>
+</html>
